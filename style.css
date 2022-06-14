@@ -14,7 +14,6 @@
 
 
 /*Caja de la Ola*/
-
 .wave {
     height: 150px; 
     overflow: hidden;
@@ -71,7 +70,6 @@ nav > h1{
 }
 
 /*Filas*/
-
 .fila1, .fila2, .fila3, .boton {
     margin: 10px;
     padding: 50px;
@@ -111,7 +109,6 @@ form {
 }
 
 /*Fila 5*/
-
 .texto_juego{
     padding: 10px;
 }
@@ -128,8 +125,23 @@ form {
     padding-top: 14px;
 }
 
-/*botones*/
+/*input y Select*/
+select{
+    width: 195px;
+    height: 25px;
+    font-size: .8em;
+}
 
+#num {
+    width: 80px;
+    height: 50px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+
+}
+
+
+/*botones*/
 .estilosBoton, .boton_off{
     width: 150px;
     padding: 10px;

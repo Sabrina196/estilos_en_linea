@@ -59,7 +59,6 @@ boton_actualizar.addEventListener("click", ()=>{
 boton_juego.addEventListener("click", ()=>{
 	/*Habilitar y Deshabilñitar Elemento de la fila 5*/
 	let numRamdon = parseInt(Math.random()*100);
-	console.log(numRamdon);
 	cambiarBotones();
 	/*Variables del Div Respuesta, mensaje y arreglo que guarda intentos*/
 		let respuesta = document.getElementById("respuesta_juego");
