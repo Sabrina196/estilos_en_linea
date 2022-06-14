@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--Fuentes Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Indie+Flower&family=Lobster+Two&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <nav>
+            <h1>Bienvenidos</h1>
+        </nav>
+        <div class="ola">
+            <div class="wave"><svg viewBox="0 0 500 150" preserveAspectRatio="none"><path id="path" d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path></svg></div>
+        </div>
+    </header>
+
+    <!--Main-->
+    <main id="cuerpo_principal">
+        <!--Container-->
+        <div class="contenedor_main">
+            <h2 id="titulo">Elegí algunas las opciones</h2>
+
+            <!--Row1-->
+            <div class="fila1">
+
+                <section>
+                    <h3><span>1</span> ¿Qué color de Fondo queda mejor para vos?</h3><br>
+                    <hr>
+                    <form id="colorFondo">
+                        <input type="radio" name="opcion" value="#81c9fa">
+                        <label for="celeste" class="opciones">Turquesa</label><br>
+        
+                        <input type="radio" name="opcion" value="#65727c">
+                        <label for="rosa" class="opciones">Gris</label><br>
+        
+                        <input type="radio" name="opcion" value="#ffe0ff">
+                        <label for="verde" class="opciones">Lila</label><br>
+                    </form>
+                </section>
+    
+                <section>
+                    <h3><span>2</span> Color de la tipografía</h3><br>
+                    <hr>
+                    <form action="#">
+                        <label>Elegí un Color: </label>	
+                        <input type="color" id="letraColor">
+                    </form>	
+                </section>                
+            </div>
+            <!--Row2-->
+            <div class="fila2">
+
+                <section>
+                    <h3><span>3</span> ¿Cúal tipografía te gusta más?</h3><br>
+                    <hr>
+                    <form id="tipoLetra">
+                        <label for="Tipo">Tipo de Letra: </label>
+                        <select name="Tipo" id="seleccionado">
+                            <option disabled selected>Selecciona una opción</option>
+                            <option value="1">Roboto</option>
+                            <option value="2">Indie Flower</option>
+                            <option value="3">Fascinate Inline</option>
+                            <option value="4">Lobster Two</option>
+                        </select>
+                    </form>
+                </section>
+
+                <section>
+                    <h3><span>4</span> Tamaño de la Tipografía</h3><br>
+                    <hr>
+                    <form id="tamañoLetra">
+                        <input type="radio" name="letra_tamaño" value=".7em">
+                        <label for="chica" class="opciones">Chica</label><br>
+        
+                        <input type="radio" name="letra_tamaño" value=".9em">
+                        <label for="mediana" class="opciones">Mediana</label><br>
+        
+                        <input type="radio" name="letra_tamaño" value="1.3em">
+                        <label for="grande" class="opciones">Grande</label><br><br>
+        
+                    </form>
+                </section>
+            </div>
+            
+            <!--Button-->
+            <div class="boton">
+                <button class="estilosBoton" id="boton_actualizar"> Restablecer Todo</button>
+            </div>
+
+            <!--Juego-->
+            <div class="fila3">
+                <section>
+                    <h3><span>5</span>Adivina el N° del 0 al 99</h3><br>
+                    <hr>
+                    <p class="texto_juego">Cuando comiences se generará un N° ramdon del 0 al 99 oculto que tendrás que adivinar</p>
+                    <div class="cajaBoton">
+                        <button class="estilosBoton" id="boton_juego">Comenzar</button>
+                    </div>
+                    <form id="juego">
+                        <label for="num">Escribi el N°:</label>
+                        <input id="num" type="number" min="0" max="99" disabled required>
+                        <button class="boton_off" id="probar" disabled>Adivinar</button>
+                    </form>
+                    <!--Caja de Mensajes-->
+                    <div id="respuesta_juego">
+                        
+                    </div>
+                </section>  
+            </div>
+
+            <!--Box-->
+            <div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <!--footer-->
+    <footer>
+        <h4 class="titulo_final">&copy; 2022 | Sabri</h4>
+   </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

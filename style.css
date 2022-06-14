@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#juego, #respuesta_juego, .contenedor_main, .cajaBoton, h4{
+    margin: auto;
+}
+
+#titulo, #juego, #respuesta_juego, .cajaBoton, nav, span, h4{
+    text-align: center;
+}
+
+
+/*Caja de la Ola*/
+
+.wave {
+    height: 150px; 
+    overflow: hidden;
+}
+
+svg {
+    height: 100%; 
+    width: 100%;
+}
+
+path {
+    stroke: none; 
+    fill: #fff
+}
+
+/*header*/
+header {
+    width: 100%;
+    height: 500px;
+    background: #ad5389;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, hsla(279, 67%, 19%, 0.637), hsla(324, 35%, 50%, 0.637)), url(fondo.gif);  
+    background: linear-gradient(to right, hsla(279, 67%, 19%, 0.637), hsla(324, 35%, 50%, 0.637)), url(fondo.gif); 
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    color: azure;
+}
+
+nav > h1{
+    padding: 150px 0 150px 0;
+    font-size: 2.5rem;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*Main*/
+.contenedor_main {
+    padding: 40px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    
+}
+
+#titulo{
+    color: #642a73;
+    font-size: 2rem;
+}
+
+/*Filas*/
+
+.fila1, .fila2, .fila3, .boton {
+    margin: 10px;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+}
+
+section {
+    width: 650px;
+    min-width: 280px;
+    padding: 35px;
+    border-radius: 60px;
+    border: 3px solid #642a73;
+    box-shadow: 0 0 9px rgba(0, 0, 0, .5);    
+}
+
+span {
+    background: #642a73;
+    color:#fff;
+    border-radius: 20%;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, .5);
+    margin-right: 8px;
+}
+
+span:hover{
+    color: #642a73;
+    background: #fff;
+}
+
+form {
+    margin-top: 20px;
+}
+
+/*Fila 5*/
+
+.texto_juego{
+    padding: 10px;
+}
+
+.cajaBoton {
+    padding-top:10p;
+}
+
+#juego {
+    padding-top: 5px;
+}
+
+#respuesta_juego{
+    padding-top: 14px;
+}
+
+/*botones*/
+
+.estilosBoton, .boton_off{
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.estilosBoton{
+    color: #fff;
+    background: #642a73;
+    font-weight: bold;
+}
+
+.estilosBoton:hover{
+    cursor: pointer;
+    color: #642a73;
+    background: #fff;
+}
+
+/*footer*/
+ footer{
+    width: 100%;
+    background:  #642a73;;
+}
+
+h4{
+    padding: 25px;
+    color: #fff;
+}
