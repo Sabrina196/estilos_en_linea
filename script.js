@@ -6,12 +6,11 @@ const letraColor = document.getElementById("letraColor");
 const titulo = document.getElementById("titulo");
 const tipoLetra = document.getElementById("tipoLetra");
 const boton_actualizar = document.getElementById("boton_actualizar");
+const formJuego = document.getElementById("juego");
 const boton_juego = document.getElementById("boton_juego");
-const num = document.getElementById("num");
-const probar =document.getElementById("probar");
-let intentos=[];
-
-
+let intentos=[];	
+let valor="";
+let valorInicial="";
 
 //--Cambiar Color de Fondo--//
 colorFondo.addEventListener("click", (e)=>{
@@ -48,46 +47,61 @@ tipoLetra.addEventListener("change", (e)=>{
 tamañoLetra.addEventListener("click", (e)=>{
 	fondo.style.fontSize = e.target.value;
 })
-//--Restablecer--//
+//--RESTABLECER TODO--//
 boton_actualizar.addEventListener("click", ()=>{
 	location.reload(true);
 })
 
-//--Juego--//
-
 /*Comenzar Juego*/
 boton_juego.addEventListener("click", ()=>{
-	/*Habilitar y Deshabilñitar Elemento de la fila 5*/
+	/*Definicion de variables de los elementos input, boton "Adivinar"
+	  Div Respuesta y Div de los intentos*/
+	const num = document.getElementById("num");
+	const probar =document.getElementById("probar");
+	let respuesta = document.getElementById("respuesta_juego");
 	let numRamdon = parseInt(Math.random()*100);
+	/*Habilitar y Deshabilitar Elemento de la fila 5*/
 	cambiarBotones();
-	/*Variables del Div Respuesta, mensaje y arreglo que guarda intentos*/
-		let respuesta = document.getElementById("respuesta_juego");
-		let mensaje="";
-		/*Evento con el boton Adivinar*/	
-		probar.addEventListener("click", (e)=>{
-			e.preventDefault();
-			let valor = num.value;
+	/*Escucha del evento Input*/
+	num.addEventListener('input', (e)=> {
+	valorInicial = e.target.value;
+	})
+	/*Evento con el boton Adivinar*/	
+	probar.addEventListener("click", (e)=>{
+		e.preventDefault();			
 			/*Validacion*/
-			if(valor < 0 || valor > 99){
-				mensaje = "Escriba un Número del 0 al 99";
+			if(valorInicial == ""){
+				mensaje =`¡Escriba un Número!`;
 			}
-			else {
-				if(valor < numRamdon){
-					mensaje=`El Numero es más alto que ${valor}`;
-					intentos.push(valor);
+			else if(valorInicial == valor){
+				mensaje =`Escriba un Número diferente a ${valor}`;
+			}			
+			else{
+				valor = valorInicial;
+				if(valor < 0 || valor > 99){
+					mensaje = "Escriba un Número del 0 al 99";
 				}
-				else if(valor > numRamdon){
-					mensaje=`El Número es más bajo que ${valor}`;
-					intentos.push(valor);
+				else {
+					if(valor < numRamdon){
+						mensaje=`El Numero es más alto que ${valor}`;
+						intentos.push(valor);
+					}
+					else if(valor > numRamdon){
+						mensaje=`El Número es más bajo que ${valor}`;
+						intentos.push(valor);
+					}
+					else{
+						intentos.push(valor);
+						cantidad = intentos.length;	
+						mensaje=`¡Felicitaciones! Adivinaste el N° ${numRamdon} en ${cantidad} intento/s`;
+						reiniciar_juego();
+					}
 				}
-				else{
-					cantidad = intentos.length;
-					mensaje=`¡Felicitaciones! Adivinaste el N° ${numRamdon} en ${cantidad} intento/s`;
-					reiniciar_juego();
-				}
-			}
+			/*Visibilidad de Intentos*/
+			let cajaArray = document.getElementById("arreglo");
+			cajaArray.innerHTML	=intentos;	
+			}	
 			respuesta.innerHTML=mensaje;
-			console.log(intentos)			
 		})
 })
 
@@ -104,14 +118,38 @@ function cambiarBotones(){
 
 /*Funcion de Reiniciar el Juego y limpiar Campos*/
 function reiniciar_juego(){
-	boton_juego.disabled=false;
-	boton_juego.classList.remove("boton_off");
-	boton_juego.classList.add("estilosBoton");
 	intentos = [];
+	valor ="";
 	probar.disabled=true;
-	probar.classList.remove("boton_off");
-	probar.classList.add("estilosBoton");
+	num.disabled=true;
+	probar.classList.remove("estilosBoton");
+	probar.classList.add("boton_off");
 }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
