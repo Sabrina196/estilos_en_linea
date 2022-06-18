@@ -99,7 +99,8 @@ boton_juego.addEventListener("click", ()=>{
 				}
 			/*Visibilidad de Intentos*/
 			let cajaArray = document.getElementById("arreglo");
-			cajaArray.innerHTML	=intentos;	
+			num_intento = intentos.join("-" );
+			cajaArray.innerHTML	=num_intento;	
 			}	
 			respuesta.innerHTML=mensaje;
 		})
